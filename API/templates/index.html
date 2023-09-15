@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} GOOGLE NEWS CRAWLER {% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+ {% for content in parsed_data %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Title: {{ content.title }}</h4>
+    <p class="card-text">URL: {{ content.url }}</p>
+      <p class="card-text">Date: {{ content.pub_date}}</p>
+
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
+
+</body>
+</html>
