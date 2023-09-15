@@ -21,16 +21,15 @@ def get_request() -> dict:
         return dict_data
 
 
-def save_file(dict_data: dict):
+def save_file(dict_data: dict) -> str:
     """
 
-    :param dict_data: dictionary data we got from the get_request() method
+    :param dict_data: dictionary data that get_request() method returned
     :return: filname with json extension
 
     This function is to save network calls. Instead of sending request to the googlenews,
     we are saving the output and parsing it locally
     """
-    #filename=hashlib.md5(dict_data).hexdigest()
     filename=str(time.time())
     filename=hashlib.md5(filename.encode()).hexdigest()
     exists = filename + ".json"
