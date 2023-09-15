@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from src.main_file import main
-from src.mongodb import insert
+from src.mongodb import insert, query_from_database
 
 app=Flask(__name__)
 
@@ -8,15 +8,18 @@ app=Flask(__name__)
 def home():
     global title
     parsed_data=main()
-
-    # for i in range(len(parsed_data)):
-    #     title=parsed_data[i]["title"]
     saved_into_db = insert(parsed_data)
     return render_template("index.html",parsed_data=parsed_data)
 
-@app.route("/archieve")
+@app.route("/archive", methods=["GET","POST"])
 def archieve():
-    pass
+    return render_template("archieve.html")
+
+@app.route("/process", methods=["POST"])
+def process():
+    user_input = request.form.get("user_input")
+    output = query_from_database(user_input)
+    return render_template("success.html",output=output, user_input=user_input)
 
 
 
