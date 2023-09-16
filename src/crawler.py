@@ -91,7 +91,7 @@ def parse(dict_data: dict) -> list:
                        "url": url,
                        "website": website}
         result.append(result_dict)
-    #print(result)
+
     return result
 
 
