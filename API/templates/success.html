@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<h2>Keyword used: {{ user_input }}</h2>
+ {% for content in output %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Title: {{ content.title }}</h4>
+      <p class="card-text">Date: {{ content.pub_date}}</p>
+    <a href="{{content.url}}" class="card-link">Read here</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}
+
+</body>
+</html>
