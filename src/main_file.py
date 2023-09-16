@@ -7,8 +7,7 @@ def main():
     json_file=read_file(filename)
     parsed_result=parse(json_file)
     return parsed_result
-    #
-    # return saved_into_db # remove this
+
 
 if __name__ == "__main__":
     main()
