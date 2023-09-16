@@ -10,9 +10,8 @@
 <div class="card">
   <div class="card-body">
     <h4 class="card-title">Title: {{ content.title }}</h4>
-    <p class="card-text">URL: {{ content.url }}</p>
       <p class="card-text">Date: {{ content.pub_date}}</p>
-
+    <a href="{{content.url}}" class="card-link">Read here</a>
   </div>
 </div>
 {% endfor %}
