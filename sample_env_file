@@ -1,0 +1,2 @@
+BASE_URL="https://news.google.com/rss"
+DB_URL="mongodb+srv://yuvarajan:yuvarajan@cluster0.q74y8yu.mongodb.net/?retryWrites=true&w=majority"
