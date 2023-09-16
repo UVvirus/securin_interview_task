@@ -13,7 +13,7 @@ def home():
 
 @app.route("/archive", methods=["GET","POST"])
 def archieve():
-    return render_template("archieve.html")
+    return render_template("archive.html")
 
 @app.route("/process", methods=["POST"])
 def process():
